@@ -65,11 +65,84 @@
     sectionView.innerHTML = html;
   }
 
+  // Stato in memoria delle selezioni per i calcolatori interattivi (si perde ricaricando la pagina, va bene: ogni caso clinico riparte da zero)
+  const selezioni = {};
+
+  function renderInterattivo(voce) {
+    showSection();
+    const c = voce.contenuto;
+    selezioni[voce.id] = selezioni[voce.id] || {};
+    const sel = selezioni[voce.id];
+
+    let html = backLink();
+    html +=
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">' +
+      '<div><h2 style="margin:0;">' + voce.titolo + '</h2>' +
+      '<p style="color:#5b5e58;margin:2px 0 0;">' + (c.ambito || '') + (c.range ? ' &middot; ' + c.range : '') + '</p></div>' +
+      '<div id="totale-' + voce.id + '" style="flex-shrink:0;background:#2f5d4f;color:#fff;font-weight:700;font-size:20px;border-radius:999px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;">0</div>' +
+      '</div>';
+
+    c.items.forEach(function (item) {
+      html += '<div style="margin:16px 0;"><div style="font-weight:600;margin-bottom:8px;">' + item.label + '</div>';
+      html += '<div style="display:flex;flex-wrap:wrap;gap:8px;" data-item="' + item.id + '">';
+      item.opzioni.forEach(function (opt, idx) {
+        html +=
+          '<button type="button" data-item="' + item.id + '" data-punti="' + opt.punti + '" data-idx="' + idx + '" ' +
+          'style="border:1px solid #e3e0d7;background:#faf9f6;color:#20231f;border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer;">' +
+          opt.testo + ' <span style="opacity:.6;">' + opt.punti + '</span></button>';
+      });
+      html += '</div></div>';
+    });
+
+    if (c.note_interpretazione) {
+      html += '<p style="color:#5b5e58;margin-top:18px;">' + c.note_interpretazione + '</p>';
+    }
+    if (voce.fonte) {
+      html += '<p style="font-size:12px;color:#5b5e58;margin-top:18px;">Fonte: ' + voce.fonte.nome +
+        (voce.fonte.anno ? ' (' + voce.fonte.anno + ')' : '') + '</p>';
+    }
+    if (voce.verifica && voce.verifica.data_verifica) {
+      html += '<p style="font-size:12px;color:#5b5e58;">Verificato il ' + voce.verifica.data_verifica +
+        ' &middot; prossima revisione ' + voce.verifica.prossima_revisione + '</p>';
+    }
+
+    sectionView.innerHTML = html;
+
+    function ricalcolaTotale() {
+      let tot = 0;
+      Object.keys(sel).forEach(function (k) { tot += sel[k]; });
+      const el = document.getElementById('totale-' + voce.id);
+      if (el) el.textContent = tot;
+    }
+
+    sectionView.querySelectorAll('button[data-item]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const itemId = btn.getAttribute('data-item');
+        const punti = parseInt(btn.getAttribute('data-punti'), 10);
+        sel[itemId] = punti;
+        sectionView.querySelectorAll('button[data-item="' + itemId + '"]').forEach(function (b) {
+          b.style.background = '#faf9f6';
+          b.style.color = '#20231f';
+          b.style.borderColor = '#e3e0d7';
+        });
+        btn.style.background = '#2f5d4f';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#2f5d4f';
+        ricalcolaTotale();
+      });
+    });
+  }
+
   function renderDettaglioGenerico(voce) {
     showSection();
+
+    if (voce.contenuto && voce.contenuto.tipo === 'punteggio_interattivo') {
+      renderInterattivo(voce);
+      return;
+    }
+
     let html = backLink() + '<h2 style="margin-bottom:4px;">' + voce.titolo + '</h2>';
 
-    // Caso speciale: Glasgow Coma Scale e simili con "componenti"
     if (voce.contenuto && voce.contenuto.componenti) {
       html += '<p style="color:#5b5e58;margin-top:0;">' + (voce.contenuto.ambito || '') + ' &middot; range ' + (voce.contenuto.range || '') + '</p>';
       voce.contenuto.componenti.forEach(function (comp) {
@@ -83,7 +156,6 @@
         html += '<p style="color:#5b5e58;">' + voce.contenuto.note_interpretazione + '</p>';
       }
     } else if (voce.contenuto) {
-      // Fallback generico: mostra il contenuto come coppie chiave/valore
       html += '<pre style="white-space:pre-wrap;background:#faf9f6;border:1px solid #e3e0d7;border-radius:12px;padding:14px;font-size:13px;">' +
         JSON.stringify(voce.contenuto, null, 2) + '</pre>';
     }
@@ -101,7 +173,7 @@
   }
 
   function route() {
-    const hash = window.location.hash; // es: "#/calcolatori/glasgow-coma-scale"
+    const hash = window.location.hash;
     if (!hash || hash === '#/' || hash === '#') {
       showHome();
       return;
@@ -112,13 +184,11 @@
     const id = parts[1];
 
     if (!id) {
-      // Vista lista sezione
       fetch('data/' + sezione + '/index.json')
         .then(function (r) { if (!r.ok) throw new Error('no index'); return r.json(); })
         .then(function (data) { renderList(sezione, data.items || []); })
         .catch(function () { renderNotReady(sezione); });
     } else {
-      // Vista dettaglio voce
       fetch('data/' + sezione + '/' + id + '.json')
         .then(function (r) { if (!r.ok) throw new Error('no item'); return r.json(); })
         .then(function (data) { renderDettaglioGenerico(data); })
