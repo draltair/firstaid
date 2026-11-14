@@ -1,0 +1,56 @@
+{
+  "id": "glasgow-coma-scale",
+  "categoria": "calcolatori",
+  "titolo": "Glasgow Coma Scale",
+  "contenuto": {
+    "ambito": "Stato di coscienza, trauma cranico e non solo",
+    "range": "3-15",
+    "componenti": [
+      {
+        "voce": "Apertura degli occhi (E)",
+        "punteggi": [
+          { "punti": 4, "descrizione": "Spontanea" },
+          { "punti": 3, "descrizione": "Alla voce" },
+          { "punti": 2, "descrizione": "Al dolore" },
+          { "punti": 1, "descrizione": "Assente" }
+        ]
+      },
+      {
+        "voce": "Risposta verbale (V)",
+        "punteggi": [
+          { "punti": 5, "descrizione": "Orientata" },
+          { "punti": 4, "descrizione": "Confusa" },
+          { "punti": 3, "descrizione": "Parole inappropriate" },
+          { "punti": 2, "descrizione": "Suoni incomprensibili" },
+          { "punti": 1, "descrizione": "Assente" }
+        ]
+      },
+      {
+        "voce": "Risposta motoria (M)",
+        "punteggi": [
+          { "punti": 6, "descrizione": "Esegue ordini" },
+          { "punti": 5, "descrizione": "Localizza il dolore" },
+          { "punti": 4, "descrizione": "Retrae al dolore" },
+          { "punti": 3, "descrizione": "Flessione anomala (decorticazione)" },
+          { "punti": 2, "descrizione": "Estensione anomala (decerebrazione)" },
+          { "punti": 1, "descrizione": "Assente" }
+        ]
+      }
+    ],
+    "formula_id": "somma-e-v-m",
+    "note_interpretazione": "Totale = E + V + M. Il punteggio minimo per componente è 1 (mai 0); totale minimo possibile 3, massimo 15. Riportare sempre anche i tre sotto-punteggi (es. E3V4M5), non solo il totale."
+  },
+  "fonte": {
+    "tipo": "pubblicazione_originale",
+    "nome": "Teasdale G, Jennett B. Assessment of coma and impaired consciousness. A practical scale. Lancet. 1974;2(7872):81-84.",
+    "url": "",
+    "pagina_o_sezione": "",
+    "anno": 1974
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-14",
+    "prossima_revisione": "2028-11-14"
+  },
+  "versione": 1
+}
