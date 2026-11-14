@@ -9,13 +9,18 @@
   let sectionView = document.getElementById('section-view');
 
   if (!sectionView) {
-    sectionView = document.createElement('main');
+    sectionView = document.createElement('div');
     sectionView.id = 'section-view';
     sectionView.style.display = 'none';
     sectionView.style.maxWidth = '720px';
     sectionView.style.margin = '0 auto';
     sectionView.style.padding = '4px 20px 40px';
-    document.body.insertBefore(sectionView, document.querySelector('footer'));
+    const footerEl = document.querySelector('footer');
+    if (footerEl && footerEl.parentNode) {
+      footerEl.parentNode.insertBefore(sectionView, footerEl);
+    } else {
+      document.body.appendChild(sectionView);
+    }
   }
 
   function showHome() {
