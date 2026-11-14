@@ -1,1 +1,56 @@
-data/rianimazione/
+{
+  "id": "arrest-coach-config",
+  "categoria": "rianimazione",
+  "titolo": "Configurazione Arrest Coach (AHA)",
+  "contenuto": {
+    "durata_ciclo_rcp_sec": 120,
+    "qualita_rcp": {
+      "profondita_compressioni": "almeno 5 cm",
+      "frequenza_compressioni": "100-120/min",
+      "rapporto_compressioni_ventilazioni_senza_via_aerea_avanzata": "30:2",
+      "frequenza_ventilazioni_con_via_aerea_avanzata": "1 ogni 6 sec (10/min), compressioni continue",
+      "cambio_compressore": "ogni 2 min o prima se affaticato",
+      "capnografia": "continua; se ETCO2 basso o in calo, rivalutare qualità RCP"
+    },
+    "energia_shock": {
+      "bifasico": "dose raccomandata dal produttore (es. 120-200 J iniziale); se sconosciuta, usare il massimo disponibile; dosi successive uguali o superiori",
+      "monofasico": "360 J"
+    },
+    "farmaci": {
+      "adrenalina": {
+        "dose": "1 mg EV/IO",
+        "intervallo_sec": 240,
+        "intervallo_testo": "ogni 3-5 min",
+        "nota": "nel ramo defibrillabile (FV/TV senza polso), somministrata non appena possibile dopo il secondo shock inefficace; nel ramo non defibrillabile, il prima possibile"
+      },
+      "amiodarone": {
+        "dose_1": "300 mg bolo EV/IO",
+        "dose_2": "150 mg EV/IO",
+        "quando": "ramo defibrillabile, dopo che adrenalina ed epinefrina non hanno ripristinato un ritmo perfondente"
+      },
+      "lidocaina_alternativa_amiodarone": {
+        "dose_1": "1-1.5 mg/kg EV/IO",
+        "dose_2": "0.5-0.75 mg/kg EV/IO"
+      }
+    },
+    "via_aerea_avanzata": "intubazione ET o sovraglottica, con capnografia/capnometria continua per conferma e monitoraggio",
+    "cause_reversibili": {
+      "H": ["Ipovolemia", "Ipossia", "Idrogenioni (acidosi)", "Ipo-/iperkaliemia", "Ipotermia"],
+      "T": ["Pneumotorace iperteso", "Tamponamento cardiaco", "Tossici", "Trombosi polmonare", "Trombosi coronarica"]
+    }
+  },
+  "fonte": {
+    "tipo": "linea_guida",
+    "nome": "American Heart Association — Adult Cardiac Arrest Algorithm (VF/pVT/Asystole/PEA)",
+    "url": "",
+    "pagina_o_sezione": "Algorithm-ACLS-CA-250527.pdf",
+    "anno": 2025
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-13",
+    "prossima_revisione": "2027-11-13"
+  },
+  "versione": 1
+}
+
