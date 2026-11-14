@@ -1,113 +1,154 @@
 {
   "id": "nihss",
-  "categoria": "calcolatori",
-  "titolo": "NIHSS",
-  "contenuto": {
-    "tipo": "punteggio_interattivo",
-    "ambito": "Ictus — gravità del deficit neurologico",
-    "range": "0-42",
-    "items": [
-      { "id": "1a", "label": "1a · Livello di coscienza", "opzioni": [
-        { "punti": 0, "testo": "Vigile, pienamente reattivo" },
-        { "punti": 1, "testo": "Non vigile, risvegliabile con stimolo lieve" },
-        { "punti": 2, "testo": "Non vigile, serve stimolo ripetuto o doloroso per movimenti non stereotipati" },
-        { "punti": 3, "testo": "Risponde solo con riflessi motori/autonomici, o totalmente non responsivo" }
-      ]},
-      { "id": "1b", "label": "1b · Domande LOC (mese ed età)", "opzioni": [
-        { "punti": 0, "testo": "Risponde correttamente a entrambe" },
-        { "punti": 1, "testo": "Risponde correttamente a una" },
-        { "punti": 2, "testo": "Non risponde correttamente a nessuna" }
-      ]},
-      { "id": "1c", "label": "1c · Comandi LOC (apri/chiudi occhi, stringi/rilascia mano)", "opzioni": [
-        { "punti": 0, "testo": "Esegue entrambi correttamente" },
-        { "punti": 1, "testo": "Esegue uno correttamente" },
-        { "punti": 2, "testo": "Non esegue nessuno" }
-      ]},
-      { "id": "2", "label": "2 · Sguardo (solo movimenti orizzontali)", "opzioni": [
-        { "punti": 0, "testo": "Normale" },
-        { "punti": 1, "testo": "Paralisi parziale di sguardo, superabile" },
-        { "punti": 2, "testo": "Deviazione forzata, non superabile con manovra oculocefalica" }
-      ]},
-      { "id": "3", "label": "3 · Campo visivo", "opzioni": [
-        { "punti": 0, "testo": "Nessuna perdita visiva" },
-        { "punti": 1, "testo": "Emianopsia parziale" },
-        { "punti": 2, "testo": "Emianopsia completa" },
-        { "punti": 3, "testo": "Emianopsia bilaterale (cecità, inclusa corticale)" }
-      ]},
-      { "id": "4", "label": "4 · Paralisi facciale", "opzioni": [
-        { "punti": 0, "testo": "Movimenti simmetrici normali" },
-        { "punti": 1, "testo": "Paralisi minima (solco naso-labiale appiattito, asimmetria nel sorriso)" },
-        { "punti": 2, "testo": "Paralisi parziale (volto inferiore)" },
-        { "punti": 3, "testo": "Paralisi completa, uno o entrambi i lati" }
-      ]},
-      { "id": "5a", "label": "5a · Braccio sinistro (10 s)", "opzioni": [
-        { "punti": 0, "testo": "Nessuno slivellamento, tiene 10 s" },
-        { "punti": 1, "testo": "Slivellamento prima dei 10 s, non tocca il letto" },
-        { "punti": 2, "testo": "Qualche sforzo contro gravità, scende fino al letto" },
-        { "punti": 3, "testo": "Nessuno sforzo contro gravità, il braccio cade" },
-        { "punti": 4, "testo": "Nessun movimento" }
-      ]},
-      { "id": "5b", "label": "5b · Braccio destro (10 s)", "opzioni": [
-        { "punti": 0, "testo": "Nessuno slivellamento, tiene 10 s" },
-        { "punti": 1, "testo": "Slivellamento prima dei 10 s, non tocca il letto" },
-        { "punti": 2, "testo": "Qualche sforzo contro gravità, scende fino al letto" },
-        { "punti": 3, "testo": "Nessuno sforzo contro gravità, il braccio cade" },
-        { "punti": 4, "testo": "Nessun movimento" }
-      ]},
-      { "id": "6a", "label": "6a · Gamba sinistra (5 s)", "opzioni": [
-        { "punti": 0, "testo": "Nessuno slivellamento, tiene 5 s" },
-        { "punti": 1, "testo": "Slivellamento, cade entro 5 s ma non tocca il letto" },
-        { "punti": 2, "testo": "Qualche sforzo contro gravità, cade sul letto entro 5 s" },
-        { "punti": 3, "testo": "Nessuno sforzo contro gravità, cade subito" },
-        { "punti": 4, "testo": "Nessun movimento" }
-      ]},
-      { "id": "6b", "label": "6b · Gamba destra (5 s)", "opzioni": [
-        { "punti": 0, "testo": "Nessuno slivellamento, tiene 5 s" },
-        { "punti": 1, "testo": "Slivellamento, cade entro 5 s ma non tocca il letto" },
-        { "punti": 2, "testo": "Qualche sforzo contro gravità, cade sul letto entro 5 s" },
-        { "punti": 3, "testo": "Nessuno sforzo contro gravità, cade subito" },
-        { "punti": 4, "testo": "Nessun movimento" }
-      ]},
-      { "id": "7", "label": "7 · Atassia degli arti (solo se sproporzionata rispetto alla forza)", "opzioni": [
-        { "punti": 0, "testo": "Assente" },
-        { "punti": 1, "testo": "Presente in un arto" },
-        { "punti": 2, "testo": "Presente in due arti" }
-      ]},
-      { "id": "8", "label": "8 · Sensibilità", "opzioni": [
-        { "punti": 0, "testo": "Normale, nessuna perdita" },
-        { "punti": 1, "testo": "Perdita lieve-moderata (puntura meno acuta/sorda, o perdita superficiale ma consapevole del tocco)" },
-        { "punti": 2, "testo": "Perdita grave o totale, non consapevole del tocco" }
-      ]},
-      { "id": "9", "label": "9 · Linguaggio", "opzioni": [
-        { "punti": 0, "testo": "Nessuna afasia, normale" },
-        { "punti": 1, "testo": "Afasia lieve-moderata: perdita di fluenza/comprensione evidente ma senza limitazione significativa delle idee espresse" },
-        { "punti": 2, "testo": "Afasia grave: comunicazione frammentaria, l'ascoltatore porta il peso della conversazione" },
-        { "punti": 3, "testo": "Muto, afasia globale: nessun linguaggio o comprensione uditiva utilizzabile" }
-      ]},
-      { "id": "10", "label": "10 · Disartria", "opzioni": [
-        { "punti": 0, "testo": "Normale" },
-        { "punti": 1, "testo": "Lieve-moderata: parole arrotate, comprensibile con qualche difficoltà" },
-        { "punti": 2, "testo": "Grave: linguaggio incomprensibile o muto/anartrico" }
-      ]},
-      { "id": "11", "label": "11 · Estinzione e inattenzione (ex neglect)", "opzioni": [
-        { "punti": 0, "testo": "Nessuna anomalia" },
-        { "punti": 1, "testo": "Inattenzione o estinzione in una sola modalità sensoriale" },
-        { "punti": 2, "testo": "Grave eminattenzione o estinzione in più di una modalità; non riconosce la propria mano o si orienta verso un solo lato" }
-      ]}
-    ],
-    "note_interpretazione": "Totale = somma dei 15 item. In caso di amputazione o anchilosi l'item va annotato UN (untestable) ed escluso dal totale. Non tornare indietro a correggere un punteggio dopo aver iniziato l'item successivo. Un paziente in coma (1a=3) riceve automaticamente 2 su Sensibilità (8) e 3 su Linguaggio (9)."
-  },
-  "fonte": {
-    "tipo": "linea_guida",
-    "nome": "National Institute of Neurological Disorders and Stroke (NINDS/NIH) — NIH Stroke Scale",
-    "url": "https://catalog.ninds.nih.gov/sites/default/files/publications/nih-stroke-scale.pdf",
-    "pagina_o_sezione": "Scale Definition, item 1a-11",
-    "anno": 2024
-  },
-  "verifica": {
-    "verificato_da": "Martino Longo",
-    "data_verifica": "2026-11-14",
-    "prossima_revisione": "2028-11-14"
-  },
-  "versione": 1
+  "title": "NIH Stroke Scale (NIHSS)",
+  "description": "Valutazione della gravità del deficit neurologico nell'ictus.",
+  "categories": [
+    {
+      "key": "1a",
+      "name": "1a · Livello di coscienza",
+      "items": [
+        { "label": "Vigile, pienamente reattivo", "score": 0 },
+        { "label": "Non vigile, risvegliabile con stimolo lieve", "score": 1 },
+        { "label": "Non vigile, serve stimolo ripetuto o doloroso", "score": 2 },
+        { "label": "Risponde solo con riflessi motori o non responsivo", "score": 3 }
+      ]
+    },
+    {
+      "key": "1b",
+      "name": "1b · Domande LOC (mese ed età)",
+      "items": [
+        { "label": "Risponde correttamente a entrambe", "score": 0 },
+        { "label": "Risponde correttamente a una", "score": 1 },
+        { "label": "Non risponde correttamente a nessuna", "score": 2 }
+      ]
+    },
+    {
+      "key": "1c",
+      "name": "1c · Comandi LOC",
+      "items": [
+        { "label": "Esegue entrambi correttamente", "score": 0 },
+        { "label": "Esegue uno correttamente", "score": 1 },
+        { "label": "Non esegue nessuno", "score": 2 }
+      ]
+    },
+    {
+      "key": "2",
+      "name": "2 · Sguardo orizzontale",
+      "items": [
+        { "label": "Normale", "score": 0 },
+        { "label": "Paralisi parziale di sguardo, superabile", "score": 1 },
+        { "label": "Deviazione forzata, non superabile", "score": 2 }
+      ]
+    },
+    {
+      "key": "3",
+      "name": "3 · Campo visivo",
+      "items": [
+        { "label": "Nessuna perdita visiva", "score": 0 },
+        { "label": "Emianopsia parziale", "score": 1 },
+        { "label": "Emianopsia completa", "score": 2 },
+        { "label": "Emianopsia bilaterale (cecità)", "score": 3 }
+      ]
+    },
+    {
+      "key": "4",
+      "name": "4 · Paralisi facciale",
+      "items": [
+        { "label": "Movimenti simmetrici normali", "score": 0 },
+        { "label": "Paralisi minima", "score": 1 },
+        { "label": "Paralisi parziale (volto inferiore)", "score": 2 },
+        { "label": "Paralisi completa", "score": 3 }
+      ]
+    },
+    {
+      "key": "5a",
+      "name": "5a · Braccio sinistro",
+      "items": [
+        { "label": "Nessuno slivellamento (10 s)", "score": 0 },
+        { "label": "Slivellamento prima dei 10 s, non tocca il letto", "score": 1 },
+        { "label": "Qualche sforzo contro gravità, scende sul letto", "score": 2 },
+        { "label": "Nessuno sforzo contro gravità, cade", "score": 3 },
+        { "label": "Nessun movimento", "score": 4 }
+      ]
+    },
+    {
+      "key": "5b",
+      "name": "5b · Braccio destro",
+      "items": [
+        { "label": "Nessuno slivellamento (10 s)", "score": 0 },
+        { "label": "Slivellamento prima dei 10 s, non tocca il letto", "score": 1 },
+        { "label": "Qualche sforzo contro gravità, scende sul letto", "score": 2 },
+        { "label": "Nessuno sforzo contro gravità, cade", "score": 3 },
+        { "label": "Nessun movimento", "score": 4 }
+      ]
+    },
+    {
+      "key": "6a",
+      "name": "6a · Gamba sinistra",
+      "items": [
+        { "label": "Nessuno slivellamento (5 s)", "score": 0 },
+        { "label": "Slivellamento entro 5 s, non tocca il letto", "score": 1 },
+        { "label": "Qualche sforzo contro gravità, cade sul letto", "score": 2 },
+        { "label": "Nessuno sforzo contro gravità", "score": 3 },
+        { "label": "Nessun movimento", "score": 4 }
+      ]
+    },
+    {
+      "key": "6b",
+      "name": "6b · Gamba destra",
+      "items": [
+        { "label": "Nessuno slivellamento (5 s)", "score": 0 },
+        { "label": "Slivellamento entro 5 s, non tocca il letto", "score": 1 },
+        { "label": "Qualche sforzo contro gravità, cade sul letto", "score": 2 },
+        { "label": "Nessuno sforzo contro gravità", "score": 3 },
+        { "label": "Nessun movimento", "score": 4 }
+      ]
+    },
+    {
+      "key": "7",
+      "name": "7 · Atassia degli arti",
+      "items": [
+        { "label": "Assente", "score": 0 },
+        { "label": "Presente in un arto", "score": 1 },
+        { "label": "Presente in due arti", "score": 2 }
+      ]
+    },
+    {
+      "key": "8",
+      "name": "8 · Sensibilità",
+      "items": [
+        { "label": "Normale", "score": 0 },
+        { "label": "Perdita lieve-moderata", "score": 1 },
+        { "label": "Perdita grave o totale", "score": 2 }
+      ]
+    },
+    {
+      "key": "9",
+      "name": "9 · Linguaggio",
+      "items": [
+        { "label": "Nessuna afasia", "score": 0 },
+        { "label": "Afasia lieve-moderata", "score": 1 },
+        { "label": "Afasia grave", "score": 2 },
+        { "label": "Muto / afasia globale", "score": 3 }
+      ]
+    },
+    {
+      "key": "10",
+      "name": "10 · Disartria",
+      "items": [
+        { "label": "Normale", "score": 0 },
+        { "label": "Lieve-moderata", "score": 1 },
+        { "label": "Grave / incomprensibile", "score": 2 }
+      ]
+    },
+    {
+      "key": "11",
+      "name": "11 · Estinzione e inattenzione",
+      "items": [
+        { "label": "Nessuna anomalia", "score": 0 },
+        { "label": "Inattenzione o estinzione in una modalità", "score": 1 },
+        { "label": "Grave eminattenzione in più modalità", "score": 2 }
+      ]
+    }
+  ]
 }
