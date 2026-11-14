@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Voce base DEA-LIRIO",
+  "type": "object",
+  "required": ["id", "categoria", "titolo", "contenuto", "fonte", "verifica", "versione"],
+  "properties": {
+    "id": { "type": "string" },
+    "categoria": { "type": "string" },
+    "titolo": { "type": "string" },
+    "contenuto": { "type": "object" },
+    "fonte": {
+      "type": "object",
+      "required": ["tipo", "nome"],
+      "properties": {
+        "tipo": { "type": "string" },
+        "nome": { "type": "string", "minLength": 1 },
+        "url": { "type": "string" },
+        "pagina_o_sezione": { "type": "string" },
+        "anno": { "type": "integer" }
+      }
+    },
+    "verifica": {
+      "type": "object",
+      "required": ["verificato_da", "data_verifica", "prossima_revisione"],
+      "properties": {
+        "verificato_da": { "type": "string", "minLength": 1 },
+        "data_verifica": { "type": "string", "format": "date" },
+        "prossima_revisione": { "type": "string", "format": "date" }
+      }
+    },
+    "versione": { "type": "integer", "minimum": 1 }
+  }
+}
