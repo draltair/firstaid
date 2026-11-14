@@ -7,6 +7,7 @@
     "range": "3-15",
     "componenti": [
       {
+        "id": "E",
         "voce": "Apertura degli occhi (E)",
         "punteggi": [
           {
@@ -28,6 +29,7 @@
         ]
       },
       {
+        "id": "V",
         "voce": "Risposta verbale (V)",
         "punteggi": [
           {
@@ -53,6 +55,7 @@
         ]
       },
       {
+        "id": "M",
         "voce": "Risposta motoria (M)",
         "punteggi": [
           {
@@ -82,7 +85,44 @@
         ]
       }
     ],
-    "formula_id": "somma-e-v-m",
+    "formula": {
+      "id": "somma-e-v-m",
+      "espressione": "E + V + M",
+      "variabili": [
+        "E",
+        "V",
+        "M"
+      ],
+      "min_totale": 3,
+      "max_totale": 15,
+      "formato_output": "GCS {totale}/15 (E{E}V{V}M{M})"
+    },
+    "interpretazione": [
+      {
+        "min": 13,
+        "max": 15,
+        "gravita": "lieve",
+        "etichetta": "Trauma cranico lieve / Stato di coscienza conservato o lievemente alterato",
+        "colore": "success",
+        "alert": false
+      },
+      {
+        "min": 9,
+        "max": 12,
+        "gravita": "moderata",
+        "etichetta": "Trauma cranico moderato / Alterazione moderata della coscienza",
+        "colore": "warning",
+        "alert": false
+      },
+      {
+        "min": 3,
+        "max": 8,
+        "gravita": "grave",
+        "etichetta": "Trauma cranico grave / Coma (valutare protezione delle vie aeree)",
+        "colore": "danger",
+        "alert": true
+      }
+    ],
     "note_interpretazione": "Totale = E + V + M. Il punteggio minimo per componente è 1 (mai 0); totale minimo possibile 3, massimo 15. Riportare sempre anche i tre sotto-punteggi (es. E3V4M5), non solo il totale."
   },
   "fonte": {
@@ -97,5 +137,5 @@
     "data_verifica": "2026-11-14",
     "prossima_revisione": "2028-11-14"
   },
-  "versione": 1
+  "versione": 2
 }
