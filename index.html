@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Aid - Pronto Soccorso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>First Aid</h1>
+        <p class="subtitle">Algoritmi, calcolatori e numeri utili per sopravvivere al Pronto Soccorso di Prato.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Cerca score, protocollo o strumento..." id="global-search" oninput="filtraCard(this.value)">
+    </div>
+
+    <!-- VISTA PRINCIPALE -->
+    <div id="main-grid-view" class="grid-container">
+        <div class="card" onclick="apriSezione('rubrica')"><h3>Rubrica 📞</h3><p>Numeri interni ed esterni</p></div>
+        <div class="card" onclick="apriSezione('pdta')"><h3>PDTA 📋</h3><p>Percorsi, linee guida, algoritmi</p></div>
+        <div class="card" onclick="apriSezione('calcolatori')"><h3>Calcolatori 🧮</h3><p>Score, clearance, elettroliti</p></div>
+        <div class="card" onclick="apriSezione('antibiotici')"><h3>Antibiotici 💊</h3><p>Empirica toscana, fiale, rene</p></div>
+        <div class="card" onclick="apriSezione('procedure')"><h3>Procedure 📐</h3><p>Passaggi e schemi disegnati</p></div>
+        <div class="card" onclick="apriSezione('rianimazione')"><h3>Rianimazione ⚡</h3><p>Arrest coach e algoritmi AHA</p></div>
+        <div class="card" onclick="apriSezione('egaview')"><h3>Analisi EGA 🩸</h3><p>pH, compenso, anion gap, P/F</p></div>
+        <div class="card" onclick="apriSezione('sedazione')"><h3>Sedazione 💉</h3><p>Schemi per 70 kg</p></div>
+        <div class="card" onclick="apriSezione('cartella')"><h3>Cartella 📝</h3><p>Anamnesi ed EO per sintomo</p></div>
+        <div class="card" onclick="apriSezione('dimissione')"><h3>Dimissione 📤</h3><p>Testi pronti da adattare</p></div>
+        <div class="card" onclick="apriSezione('moduli')"><h3>Moduli 📄</h3><p>Da compilare e stampare</p></div>
+        <div class="card" onclick="apriSezione('percorsi')"><h3>Percorsi ⚖️</h3><p>Referto, INAIL, decesso, TSO, Codice Rosa</p></div>
+        <div class="card" onclick="apriSezione('docs')"><h3>Docs ASL 📁</h3><p>Protocolli e moduli aziendali originali</p></div>
+        <div class="card" onclick="apriSezione('formazione')"><h3>Formazione 📚</h3><p>Regole, calendario, programmi</p></div>
+        <div class="card" onclick="apriSezione('turni')"><h3>Turni 🔒 🕒</h3><p>Chi c'è oggi, i miei turni</p></div>
+        <div class="card" onclick="apriSezione('riunioni')"><h3>Riunioni 🔒 👥</h3><p>Verbali e comunicazioni</p></div>
+    </div>
+
+    <!-- CALCOLATORI -->
+    <div id="view-calcolatori" class="view-section">
+        <button class="back-btn" onclick="chiudiSezioni()">← Indietro</button>
+        <h2>Calcolatori & Score Clinici</h2>
+        <p class="subtitle" style="margin-bottom: 16px;">Seleziona lo score desiderato.</p>
+        <div class="calc-list">
+            <button class="calc-item-btn" onclick="caricaScore('heart')">HEART Score (Dolore Toracico)</button>
+            <button class="calc-item-btn" onclick="caricaScore('curb65')">CURB-65 (Polmonite Comunitaria)</button>
+            <button class="calc-item-btn" onclick="caricaScore('gcs')">Glasgow Coma Scale (GCS)</button>
+            <button class="calc-item-btn" onclick="caricaScore('hasbled')">HAS-BLED (Rischio emorragico OAC)</button>
+            <button class="calc-item-btn" onclick="caricaScore('nihss')">NIHSS (Ictus)</button>
+            <button class="calc-item-btn" onclick="caricaScore('cha2ds2va')">CHA2DS2-VA (FA · rischio tromboembolico)</button>
+            <button class="calc-item-btn" onclick="caricaScore('wells-ep')">Wells EP (Embolia polmonare)</button>
+            <button class="calc-item-btn" onclick="caricaScore('wells-tvp')">Wells TVP (Trombosi venosa profonda)</button>
+            <button class="calc-item-btn" onclick="caricaScore('perc')">PERC (Escludere EP a basso rischio)</button>
+        </div>
+        <div id="score-container" style="display:none;" class="score-active-box">
+            <h3 id="score-title" style="margin-top:0; color:var(--accent); font-size: 1rem;"></h3>
+            <p id="score-desc" style="color:var(--text-muted); font-size:0.8rem; margin-bottom:12px;"></p>
+            <div id="score-inputs"></div>
+            <div class="result-display">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Punteggio Totale: <strong id="score-total" style="font-size: 1.1rem; color: var(--text-main);">0</strong></div>
+                <div id="score-interpretation" style="margin-top: 4px; font-weight: 600; color: var(--primary); font-size: 0.85rem;">Seleziona i parametri.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANALISI EGA -->
+    <div id="view-egaview" class="view-section">
+        <button class="back-btn" onclick="chiudiSezioni()">← Indietro</button>
+        <h2>Analisi EGA & Elettroliti</h2>
+        <p class="subtitle" style="margin-bottom: 16px;">Algoritmo strutturato: disturbo primario, compenso, anion gap e delta ratio.</p>
+        <div class="ega-grid">
+            <div class="input-group"><label>pH</label><input type="number" id="ega-ph" step="0.01" placeholder="7.35 - 7.45"></div>
+            <div class="input-group"><label>PaCO₂ (mmHg)</label><input type="number" id="ega-paco2" step="0.1" placeholder="35 - 45"></div>
+            <div class="input-group"><label>HCO₃⁻ (mmol/L)</label><input type="number" id="ega-hco3" step="0.1" placeholder="22 - 26"></div>
+            <div class="input-group"><label>Na⁺ (mmol/L)</label><input type="number" id="ega-na" step="1" placeholder="135 - 145"></div>
+            <div class="input-group"><label>Cl⁻ (mmol/L)</label><input type="number" id="ega-cl" step="1" placeholder="95 - 105"></div>
+            <div class="input-group"><label>K⁺ (mmol/L)</label><input type="number" id="ega-k" step="0.1" placeholder="Opzionale"></div>
+            <div class="input-group"><label>Lattati (mmol/L)</label><input type="number" id="ega-lat" step="0.1" placeholder="< 2.0"></div>
+            <div class="input-group"><label>PaO₂ (mmHg)</label><input type="number" id="ega-pao2" step="1" placeholder="80 - 100"></div>
+            <div class="input-group"><label>FiO₂ (%)</label><input type="number" id="ega-fio2" step="1" placeholder="es. 21 o 0.21"></div>
+        </div>
+        <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="ega-usak" style="width: 16px; height: 16px;">
+            <label for="ega-usak" style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">Includi K⁺ nel calcolo Anion Gap</label>
+        </div>
+        <button class="btn-action" onclick="avviaAnalisiEGA()">Genera Referto EGA</button>
+        <div id="ega-report" class="ega-report" style="display:none;">
+            <div class="ega-report-header">
+                <h4 style="margin:0; font-size:0.9rem; color:var(--accent);">Referto Testuale</h4>
+                <button class="btn-copy" onclick="copiaTestoEGA()">📋 Copia</button>
+            </div>
+            <textarea id="ega-textarea" class="ega-textarea" readonly></textarea>
+        </div>
+    </div>
+
+    <!-- SOTTO-SCHERMATA: Rianimazione Resus PRO con Flowchart Indicator -->
+    <div id="view-rianimazione" class="view-section">
+        <button class="back-btn" onclick="chiudiSezioni()">← Indietro</button>
+        <div class="resus-container">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                <span id="ritmo-status" style="font-weight:bold; color:var(--danger);">RITMO NON ANALIZZATO</span>
+                <span id="tot-timer" style="font-weight:bold; color:var(--text-main);">TOT 00:00</span>
+            </div>
+
+            <div class="cycle-banner">
+                <div>
+                    <h3 style="margin:0 0 2px 0; font-size: 1.1rem;">Compressioni 30 : 2 / Continue</h3>
+                    <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">100–120/min · Profondità 5–6 cm</p>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size:0.65rem; color:var(--text-muted); text-transform: uppercase;">Prossimo controllo tra</span>
+                    <div id="cycle-timer" class="big-timer">02:00</div>
+                </div>
+            </div>
+
+            <div id="acls-flowchart-bar" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px; text-align: center;">
+                <div id="step-cpr" style="background: var(--primary); color: white; padding: 8px 4px; border-radius: 6px; font-size: 0.7rem; font-weight: bold;">1. RCP 2 min</div>
+                <div id="step-analisi" style="background: var(--surface-hover); color: var(--text-muted); padding: 8px 4px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--border);">2. Analisi Ritmo</div>
+                <div id="step-shock" style="background: var(--surface-hover); color: var(--text-muted); padding: 8px 4px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--border);">3. Shock / No Shock</div>
+                <div id="step-farmaci" style="background: var(--surface-hover); color: var(--text-muted); padding: 8px 4px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--border);">4. Adrenalina / Farmaci</div>
+            </div>
+
+            <div class="rhythm-grid">
+                <button class="btn-defib" onclick="resus.impostaRitmo('FV / TV senza polso'); resus.registraShock();">⚡ DEFIBRILLABILE<br><small style="font-weight:normal; opacity:0.8;">Registra Shock + FV/TV</small></button>
+                <button class="btn-non-defib" onclick="resus.impostaRitmo('PEA / Asistolia')">🛑 NON DEFIBRILLABILE<br><small style="font-weight:normal; opacity:0.8;">PEA / Asistolia</small></button>
+            </div>
+
+            <div class="drugs-grid" style="margin-bottom: 14px;">
+                <div class="drug-card" onclick="resus.somministraAdrenalina()">
+                    <h4 style="margin:0 0 2px 0; font-size: 0.85rem;">ADRENALINA 1 MG</h4>
+                    <p style="margin:0; font-size:0.7rem; color:var(--text-muted);">Ogni 3-5 min</p>
+                    <span id="adren-counter" style="font-weight:bold; color:var(--accent); display:inline-block; margin-top:4px;">0 mg</span>
+                </div>
+                <div class="drug-card" onclick="resus.somministraAmiodarone(300)">
+                    <h4 style="margin:0 0 2px 0; font-size: 0.85rem;">AMIODARONE</h4>
+                    <p style="margin:0; font-size:0.7rem; color:var(--text-muted);">300 mg (poi 150 mg)</p>
+                    <span id="amio-counter" style="font-weight:bold; color:var(--accent); display:inline-block; margin-top:4px;">0 mg</span>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+                <button class="calc-item-btn" onclick="resus.registrataEvento('Intubazione / Dispositivo sovraglottico posizionato')">🫁 IOT / SGA</button>
+                <button class="calc-item-btn" onclick="resus.registrataEvento('Accesso Vascolare / IO ottenuto')">💉 Accesso IV / IO</button>
+                <button class="calc-item-btn" onclick="resus.registrataEvento('Ecografia FAST / FOCUS eseguita')">🔍 Ecografia</button>
+                <button class="calc-item-btn" onclick="alert('4H: Ipossia, Ipovolemia, Ipo/Iperkaliemia, Ipotermia\n4T: Trombosi coronarica, Trombosi polmonare, Tamponamento, Pneumotorace iperteso, Tossici')">⚠️ Cause 4H • 4T</button>
+            </div>
+
+            <div style="background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; padding: 12px; max-height: 150px; overflow-y: auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px;">
+                    <strong style="font-size: 0.8rem; color:var(--text-muted);">Registro Eventi (Resus Log)</strong>
+                    <button class="btn-copy" onclick="copiaResusLog()">📋 Copia Report</button>
+                </div>
+                <div id="resus-log-list">
+                    <em>Nessun evento registrato.</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEZIONE GENERICA -->
+    <div id="view-generica" class="view-section">
+        <button class="back-btn" onclick="chiudiSezioni()">← Indietro</button>
+        <h2 id="gen-title">Sezione</h2>
+        <p id="gen-desc" style="color: var(--text-muted); font-size: 0.9rem;">Contenuti in fase di configurazione.</p>
+    </div>
+
+    <script src="ega.js"></script>
+    <script src="calculators-engine.js"></script>
+    <script src="resus.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
