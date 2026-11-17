@@ -1,0 +1,11 @@
+{
+  "farmaci": [
+    { "id": "noradrenalina", "nome": "Noradrenalina", "categoria": "Vasocostrittori" },
+    { "id": "adrenalina", "nome": "Adrenalina (Infusione)", "categoria": "Inotropi / Vasocostrittori" },
+    { "id": "urapidil", "nome": "Urapidil (Ebrantil)", "categoria": "Antiipertensivi" },
+    { "id": "propofol", "nome": "Propofol (Diprivan)", "categoria": "Sedativi" },
+    { "id": "midazolam", "nome": "Midazolam", "categoria": "Sedativi" },
+    { "id": "fentanil", "nome": "Fentanil", "categoria": "Oppioidi / Analgesici" },
+    { "id": "dexmedetomidina", "nome": "Dexmedetomidina (Dexdor)", "categoria": "Sedativi" }
+  ]
+}
