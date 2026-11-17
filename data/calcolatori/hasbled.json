@@ -1,0 +1,36 @@
+{
+  "id": "hasbled",
+  "categoria": "calcolatori",
+  "titolo": "HAS-BLED",
+  "contenuto": {
+    "ambito": "Rischio emorragico nel paziente in terapia anticoagulante orale (fibrillazione atriale)",
+    "range": "0-9",
+    "items": [
+      { "label": "Ipertensione (PA sistolica > 160 mmHg)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Funzione renale anormale (dialisi, trapianto, creatinina > 2.26 mg/dL)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Funzione epatica anormale (cirrosi, bilirubina > 2x norma con AST/ALT/ALP > 3x norma)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Anamnesi di ictus", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Sanguinamento maggiore pregresso o predisposizione (anemia, diatesi emorragica)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "INR labile (in range terapeutico < 60% del tempo)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Età > 65 anni", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Farmaci concomitanti (antiaggreganti, FANS)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Uso di alcol (>= 8 unità/settimana)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] }
+    ],
+    "interpretazione": [
+      { "min": 0, "max": 2, "testo": "Rischio emorragico basso-moderato" },
+      { "min": 3, "max": 9, "testo": "Rischio emorragico elevato — non controindica l'anticoagulazione, ma impone di correggere i fattori modificabili e un follow-up più stretto" }
+    ]
+  },
+  "fonte": {
+    "tipo": "pubblicazione_originale",
+    "nome": "Pisters R, Lane DA, Nieuwlaat R, et al. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major bleeding in patients with atrial fibrillation: the Euro Heart Survey. Chest. 2010;138(5):1093-1100.",
+    "url": "",
+    "anno": 2010
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-15",
+    "prossima_revisione": "2028-11-15"
+  },
+  "versione": 1
+}

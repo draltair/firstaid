@@ -1,0 +1,36 @@
+{
+  "id": "perc",
+  "categoria": "calcolatori",
+  "titolo": "PERC",
+  "contenuto": {
+    "ambito": "Esclusione di embolia polmonare a basso rischio, senza D-dimero, in pazienti a bassa probabilità pre-test (gestalt clinico)",
+    "range": "0-8 (tutti 'No' = PERC negativo)",
+    "items": [
+      { "label": "Età >= 50 anni", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Frequenza cardiaca >= 100/min", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "SpO2 < 95% in aria ambiente", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Edema unilaterale di un arto", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Emottisi", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Chirurgia o trauma nelle ultime 4 settimane che abbia richiesto ricovero o anestesia generale", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Pregressa EP o TVP documentata", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Uso di estrogeni (contraccettivi orali, terapia ormonale sostitutiva)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] }
+    ],
+    "interpretazione": [
+      { "min": 0, "max": 0, "testo": "PERC negativo: se la probabilità pre-test clinica (gestalt) è già bassa, il rischio di EP è trascurabile — si può evitare ulteriore workup, D-dimero incluso" },
+      { "min": 1, "max": 8, "testo": "PERC positivo: non si può escludere l'EP con questa regola, procedere con D-dimero o imaging secondo il percorso abituale" }
+    ],
+    "nota": "La PERC si applica SOLO dopo aver stabilito clinicamente che la probabilità pre-test è bassa (es. Wells < 2). Non è un sostituto del giudizio clinico iniziale."
+  },
+  "fonte": {
+    "tipo": "pubblicazione_originale",
+    "nome": "Kline JA, Mitchell AM, Kabrhel C, Richman PB, Courtney DM. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost. 2004;2(8):1247-1255.",
+    "url": "",
+    "anno": 2004
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-17",
+    "prossima_revisione": "2028-11-17"
+  },
+  "versione": 1
+}
