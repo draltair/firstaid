@@ -1,6 +1,0 @@
-{
-  "items": [
-    { "id": "nihss", "titolo": "NIHSS", "sottotitolo": "Ictus · gravità del deficit neurologico (0-42)" },
-    { "id": "glasgow-coma-scale", "titolo": "Glasgow Coma Scale", "sottotitolo": "Stato di coscienza" }
-  ]
-}
