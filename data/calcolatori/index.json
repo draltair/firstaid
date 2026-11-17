@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "id": "heart", "titolo": "HEART Score", "sottotitolo": "Dolore toracico" },
+    { "id": "curb65", "titolo": "CURB-65", "sottotitolo": "Polmonite comunitaria" },
+    { "id": "gcs", "titolo": "Glasgow Coma Scale", "sottotitolo": "Stato di coscienza" },
+    { "id": "hasbled", "titolo": "HAS-BLED", "sottotitolo": "Rischio emorragico in OAC" },
+    { "id": "nihss", "titolo": "NIHSS", "sottotitolo": "Ictus · gravità del deficit neurologico (0-42)" },
+    { "id": "cha2ds2va", "titolo": "CHA2DS2-VA", "sottotitolo": "FA · rischio tromboembolico" },
+    { "id": "wells-ep", "titolo": "Wells EP", "sottotitolo": "Embolia polmonare" },
+    { "id": "wells-tvp", "titolo": "Wells TVP", "sottotitolo": "Trombosi venosa profonda arto inferiore" },
+    { "id": "perc", "titolo": "PERC", "sottotitolo": "Escludere EP a basso rischio" }
+  ]
+}
