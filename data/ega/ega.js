@@ -114,4 +114,3 @@ function calcolaEGA(input) {
 
     return righe.join('\n');
 }
-
