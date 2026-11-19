@@ -1,0 +1,32 @@
+{
+  "id": "bisap",
+  "categoria": "calcolatori",
+  "titolo": "BISAP",
+  "contenuto": {
+    "ambito": "Pancreatite acuta — rischio di mortalità intraospedaliera, calcolato nelle prime 24h",
+    "range": "0-5",
+    "items": [
+      { "label": "BUN (azotemia) > 25 mg/dL (8.9 mmol/L)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Stato mentale alterato (GCS < 15)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "SIRS presente (>= 2 criteri: FC>90, FR>20 o PaCO2<32, T<36 o >38, GB <4000 o >12000/mm3)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Età > 60 anni", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Versamento pleurico all'imaging", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] }
+    ],
+    "interpretazione": [
+      { "min": 0, "max": 2, "testo": "Mortalità bassa (< 2%)" },
+      { "min": 3, "max": 5, "testo": "Mortalità alta (> 15%) — rischio di pancreatite severa aumentato 6-22 volte" }
+    ]
+  },
+  "fonte": {
+    "tipo": "pubblicazione_originale",
+    "nome": "Wu BU, Johannes RS, Sun X, Tabak Y, Conwell DL, Banks PA. The early prediction of mortality in acute pancreatitis: a large population-based study. Gut. 2008;57(12):1698-1703.",
+    "url": "",
+    "anno": 2008
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-18",
+    "prossima_revisione": "2028-11-18"
+  },
+  "versione": 1
+}
