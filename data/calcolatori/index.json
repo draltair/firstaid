@@ -8,6 +8,10 @@
     { "id": "cha2ds2va", "titolo": "CHA2DS2-VA", "sottotitolo": "FA · rischio tromboembolico" },
     { "id": "wells-ep", "titolo": "Wells EP", "sottotitolo": "Embolia polmonare" },
     { "id": "wells-tvp", "titolo": "Wells TVP", "sottotitolo": "Trombosi venosa profonda arto inferiore" },
-    { "id": "perc", "titolo": "PERC", "sottotitolo": "Escludere EP a basso rischio" }
+    { "id": "perc", "titolo": "PERC", "sottotitolo": "Escludere EP a basso rischio" },
+    { "id": "constans", "titolo": "Constans", "sottotitolo": "Trombosi venosa profonda arto superiore" },
+    { "id": "spesi", "titolo": "sPESI", "sottotitolo": "EP · gravità e dimissione" },
+    { "id": "bisap", "titolo": "BISAP", "sottotitolo": "Pancreatite acuta · rischio di mortalità (prime 24h)" },
+    { "id": "ich-score", "titolo": "ICH Score", "sottotitolo": "Emorragia cerebrale spontanea · mortalità a 30 giorni" }
   ]
 }
