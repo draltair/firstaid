@@ -1,0 +1,39 @@
+{
+  "id": "cha2ds2va",
+  "categoria": "calcolatori",
+  "titolo": "CHA2DS2-VA",
+  "contenuto": {
+    "ambito": "Fibrillazione atriale — rischio tromboembolico, per decidere l'anticoagulazione",
+    "range": "0-8",
+    "items": [
+      { "label": "Scompenso cardiaco congestizio / disfunzione VS", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Ipertensione arteriosa", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Età", "opzioni": [
+        { "punti": 0, "testo": "< 65 anni" },
+        { "punti": 1, "testo": "65-74 anni" },
+        { "punti": 2, "testo": ">= 75 anni" }
+      ]},
+      { "label": "Diabete mellito", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] },
+      { "label": "Ictus / TIA / tromboembolismo pregresso", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 2, "testo": "Sì" }] },
+      { "label": "Malattia vascolare (arteriopatia periferica, pregresso IMA, placca aortica)", "opzioni": [{ "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }] }
+    ],
+    "interpretazione": [
+      { "min": 0, "max": 0, "testo": "Anticoagulazione non raccomandata" },
+      { "min": 1, "max": 1, "testo": "Anticoagulazione da considerare" },
+      { "min": 2, "max": 8, "testo": "Anticoagulazione raccomandata" }
+    ],
+    "nota": "Versione 2024 delle linee guida ESC: rimuove la categoria sesso (Sc) presente nel CHA2DS2-VASc classico, con soglia di anticoagulazione unica indipendente dal sesso."
+  },
+  "fonte": {
+    "tipo": "linea_guida",
+    "nome": "2024 European Society of Cardiology (ESC) Guidelines for the management of atrial fibrillation (CHA2DS2-VA); punteggio originale CHA2DS2-VASc: Lip GY, Nieuwlaat R, Pisters R, et al. Chest. 2010;137(2):263-272.",
+    "url": "",
+    "anno": 2024
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-17",
+    "prossima_revisione": "2028-11-17"
+  },
+  "versione": 1
+}

@@ -1,0 +1,43 @@
+{
+  "id": "curb65",
+  "categoria": "calcolatori",
+  "titolo": "CURB-65",
+  "contenuto": {
+    "ambito": "Polmonite acquisita in comunità — gravità e sede di cura",
+    "range": "0-5",
+    "items": [
+      { "label": "Confusione mentale (nuova insorgenza)", "opzioni": [
+        { "punti": 0, "testo": "Assente" }, { "punti": 1, "testo": "Presente" }
+      ]},
+      { "label": "Urea sierica > 7 mmol/L (~19 mg/dL)", "opzioni": [
+        { "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }
+      ]},
+      { "label": "Frequenza respiratoria >= 30/min", "opzioni": [
+        { "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }
+      ]},
+      { "label": "Pressione arteriosa (sistolica < 90 o diastolica <= 60 mmHg)", "opzioni": [
+        { "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }
+      ]},
+      { "label": "Età >= 65 anni", "opzioni": [
+        { "punti": 0, "testo": "No" }, { "punti": 1, "testo": "Sì" }
+      ]}
+    ],
+    "interpretazione": [
+      { "min": 0, "max": 1, "testo": "Mortalità bassa — gestione domiciliare ragionevole" },
+      { "min": 2, "max": 2, "testo": "Mortalità intermedia — valutare ricovero breve o gestione ospedaliera ambulatoriale" },
+      { "min": 3, "max": 5, "testo": "Mortalità alta — ricovero, valutare terapia intensiva se punteggio 4-5" }
+    ]
+  },
+  "fonte": {
+    "tipo": "pubblicazione_originale",
+    "nome": "Lim WS, van der Eerden MM, Laing R, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382.",
+    "url": "",
+    "anno": 2003
+  },
+  "verifica": {
+    "verificato_da": "Martino Longo",
+    "data_verifica": "2026-11-15",
+    "prossima_revisione": "2028-11-15"
+  },
+  "versione": 1
+}
